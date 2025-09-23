@@ -1,3 +1,9 @@
 :root {
+    --color-fondo:#f6f2ed;
+    --color-nav: #8b9571;
+    --color-footer: #614923;
 }
-
+body{
+    background-color: var(--color-fondo);
+    font-family: Garamond;
+}
