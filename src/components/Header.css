@@ -19,7 +19,7 @@
     display: flex;
 }
 #nav {
-    width: 100vw;
+    width: 99vw;
     flex-direction: column;
 }
 #nav-items, #logo-container {
@@ -59,6 +59,8 @@
 .a-nav:hover{
     background-color: var(--color-shadow);
     color: var(--color-letters-shadow);
+    transform: translate(-10px,-10px);
+    box-shadow: 5px 5px 5px 5px var(--color-shadow);
 }
 
 #carrito{

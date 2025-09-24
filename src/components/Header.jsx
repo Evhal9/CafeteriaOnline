@@ -1,5 +1,6 @@
 import carrito from '../assets/carrito.svg'
 import './Header.css'
+import {Link} from "react-router-dom"
 
 function Header(){
     return (
@@ -11,12 +12,12 @@ function Header(){
                     <h1 id="marca">Luna & Granos cafe </h1>
                     </section>
                 <section id="nav-items">
-                    <a class="a-nav "href="#">Inicio</a>
-                    <a class="a-nav " href="">Carta</a>
-                    <a class="a-nav " href="">Contacto</a>
-                    <a class="a-nav" href=""> Nosotros</a>
-                    <a class="a-nav"  href=""> <img id="carrito" src={carrito} alt="" /></a>  
-                                    </section>
+                    <Link class="a-nav" to="/Inicio">Inicio</Link>
+                    <Link class="a-nav" to="/Carta">Carta</Link>
+                    <Link class="a-nav" to="/Contacto">Contacto</Link>
+                    <Link class="a-nav" to="/Nosotros"> Nosotros</Link>
+                    <Link class="a-nav" to="/Carrito"> <img id="carrito" src={carrito} alt="" /></Link>
+                </section>
         </nav>
         </>
     )
