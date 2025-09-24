@@ -6,7 +6,9 @@ function Header(){
     return (
         <>
         <nav id="nav" >
-
+                <section id="first-child" >
+                    <p>Date tu gusto ☕</p>
+                </section>
                 <section id="logo-container"> 
                     <img id="logo"src="/lunaIcon.svg" alt="LogoLuna" />
                     <h1 id="marca">Luna & Granos cafe </h1>

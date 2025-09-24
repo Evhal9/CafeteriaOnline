@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Miss+Fajardose&display=swap'); 
 @import url('https://fonts.googleapis.com/css2?family=Radley:ital@0;1&display=swap');
 :root {
-    --color-nav: #8b9571;
+    --color-background: #8b9571;
     --color-letters-shadow: #614923;
-    --color-shadow: #a6b387;
+    --color-background-two: #a6b387;
+    --color-background-shadow:#c5d4a1;
     --color-letters: #3f311c;
     --fuente-texto: "Radley";
+    --color-oscuro:#34302a;
 
 }
 
 #nav, #logo, #nav-items{
-    background-color: var(--color-nav);
+    background-color: var(--color-background);
 }
 
 #logo-container,#nav-items, #nav {
@@ -31,7 +33,8 @@
     flex-direction: row;
 }
 #logo-container {
-  position: relative; }
+  position: relative; 
+}
 
 #logo{
     width: 10%;
@@ -42,6 +45,7 @@
 
 #nav-items{
     justify-content: space-evenly;
+    background-color: var(--color-background-two);
 }
 
 .a-nav {
@@ -57,7 +61,7 @@
 
 
 .a-nav:hover{
-    background-color: var(--color-shadow);
+    background-color: var(--color-background-shadow);
     color: var(--color-letters-shadow);
     transform: translate(-10px,-10px);
     box-shadow: 5px 5px 5px 5px var(--color-shadow);
@@ -77,4 +81,15 @@
   transform: translate(-50%, -50%);
   font-size: 4vw;     
   pointer-events: none; 
+}
+
+#first-child{
+    display: inline;
+    background-color: var(--color-oscuro);
+    color: rgb(242, 227, 187);
+    width: 100%;
+    height: 2vw;
+    text-align: center;
+    font-size: 0.75vw;
+    font-family: var(--fuente-texto);
 }
