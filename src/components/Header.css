@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Miss+Fajardose&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Radley:ital@0;1&display=swap');
 :root {
     --color-nav: #8b9571;
     --color-letters-shadow: #614923;
     --color-shadow: #a6b387;
     --color-letters: #3f311c;
+    --fuente-texto: "Radley";
 
 }
 
@@ -27,8 +30,8 @@
 #logo-container,#nav-items {
     flex-direction: row;
 }
-
-
+#logo-container {
+  position: relative; }
 
 #logo{
     width: 10%;
@@ -45,9 +48,10 @@
     width: 20%;
     height: 100%;
     text-align: center;
-    font-size: 4vh;
+    font-size: 2vw;
     text-decoration: none;
     color:var(--color-letters);
+    font-family: var(--fuente-texto);
 }
 
 
@@ -58,5 +62,17 @@
 }
 
 #carrito{
-    width: 35px;
+    width: 2.5vw;
+}
+
+#marca {
+  font-family: "Miss Fajardose", cursive;
+  font-weight: 100;
+  font-style: normal;
+  position: absolute; 
+  top: 25%;          
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4vw;     
+  pointer-events: none; 
 }
