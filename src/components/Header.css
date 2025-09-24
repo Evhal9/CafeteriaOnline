@@ -59,12 +59,14 @@
 }
 
 
-
+.a-nav:first-child:hover{
+    transform: translate(10px,-10px);
+} 
 .a-nav:hover{
     background-color: var(--color-background-shadow);
     color: var(--color-letters-shadow);
     transform: translate(-10px,-10px);
-    box-shadow: 5px 5px 5px 5px var(--color-shadow);
+    
 }
 
 #carrito{
@@ -92,4 +94,6 @@
     text-align: center;
     font-size: 0.75vw;
     font-family: var(--fuente-texto);
+    margin: 0px;
 }
+
