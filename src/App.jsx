@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Header from './components//Header.jsx'
+import  Inicio  from './pages/Inicio.jsx'
 import { BrowserRouter } from "react-router-dom";
 //import AppRoutes from "./components/AppRoutes.jsx"
 
@@ -10,7 +10,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
-      <Header></Header>
+      <Inicio></Inicio>
       {/*<AppRoutes></AppRoutes> */}
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>

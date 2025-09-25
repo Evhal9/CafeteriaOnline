@@ -66,11 +66,14 @@
     background-color: var(--color-background-shadow);
     color: var(--color-letters-shadow);
     transform: translate(-10px,-10px);
+    text-shadow: 3px 3px 4px white;
+    box-shadow: 3px 3px 4px rgba(255, 255, 255, 0.356);
     
 }
 
 #carrito{
     width: 2.5vw;
+    
 }
 
 #marca {
@@ -97,3 +100,23 @@
     margin: 0px;
 }
 
+
+@media (max-width: 600px) {
+    .a-nav {
+    font-size: 4vw;
+}
+#logo{
+    width: 20%;
+}
+#marca{
+    font-size: 9.5vw;
+}
+
+.a-nav:hover, .a-nav:first-child:hover{
+    transform: none;
+}
+#first-child {
+    height: 6vw;
+    font-size: 2vw;
+}
+}

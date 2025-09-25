@@ -10,7 +10,7 @@ function Header(){
                     <p>Date tu gusto ☕</p>
                 </section>
                 <section id="logo-container"> 
-                    <img id="logo"src="/lunaIcon.svg" alt="LogoLuna" />
+                    <Link id="logo" to="/Inicio"><img src="/lunaIcon.svg" alt="LogoLuna" /></Link>
                     <h1 id="marca">Luna & Granos cafe </h1>
                     </section>
                 <section id="nav-items">
