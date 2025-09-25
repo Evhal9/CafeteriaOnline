@@ -36,6 +36,7 @@
     width: 100%;
     height: 33%;
     padding-right: 15px;
+    padding-left: 15px;
 
 }
 
@@ -60,11 +61,26 @@
 
 .item-title{
     font-size: 3vw;
+    font-family: var(--fuente-texto);
+    font-weight: 100;
 }
 
 .item-info {
-    font-size: 2vw;
+    font-size: 1.5vw;
+    font-family: var(--fuente-texto);
+    font-weight: 100;
+}
+
+.item-title:nth-child(1) {
 
 }
 
-.item-title
+.item-title:nth-child(2) {}
+
+.item-title:nth-child(3) {}
+
+.item-info:nth-child(1) {}
+
+.item-info:nth-child(2) {}
+
+.item-info:nth-child(3) {}
