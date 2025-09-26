@@ -1,19 +1,19 @@
-import { useState } from 'react'
+//import { useState } from 'react'
 import './App.css'
+import  Inicio  from './pages/Inicio.jsx'
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./components/AppRoutes.jsx"
+import  Header  from './components/Header.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-  
-    </>
+    <BrowserRouter>
+      <Header />
+      <main>
+        <AppRoutes />
+      </main>
+    </BrowserRouter>
   )
 }
 
