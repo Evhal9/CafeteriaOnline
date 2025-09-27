@@ -1,0 +1,116 @@
+
+.nosotros-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.nosotros-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.nosotros-header h1 {
+    font-size: 3rem;
+    color: #8B4513;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.nosotros-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.nosotros-content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.nosotros-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nosotros-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+
+.nosotros-section:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.nosotros-text {
+    flex: 1;
+}
+
+.nosotros-text h2 {
+    font-size: 2rem;
+    color: #8B4513;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f0e7dd;
+    padding-bottom: 10px;
+}
+
+.nosotros-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+.nosotros-image {
+    flex: 1;
+    max-width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.nosotros-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.nosotros-image:hover img {
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .nosotros-section,
+    .nosotros-section:nth-child(even) {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nosotros-image {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
