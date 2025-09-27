@@ -1,4 +1,4 @@
-import './Inicio.css'
+import './Inicio.css';
 
 function Inicio() {
     return (
