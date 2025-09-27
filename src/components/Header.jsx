@@ -10,11 +10,11 @@ function Header(){
                     <p>Date tu gusto ☕</p>
                 </section>
                 <section id="logo-container"> 
-                    <Link id="logo" to="/Inicio"><img src="/lunaIcon.svg" alt="LogoLuna" /></Link>
+                    <Link id="logo" to="/"><img src="/lunaIcon.svg" alt="LogoLuna" /></Link>
                     <h1 id="marca">Luna & Granos cafe </h1>
                     </section>
                 <section id="nav-items">
-                    <Link class="a-nav" to="/Inicio">Inicio</Link>
+                    <Link class="a-nav" to="/">Inicio</Link>
                     <Link class="a-nav" to="/Carta">Carta</Link>
                     <Link class="a-nav" to="/Contacto">Contacto</Link>
                     <Link class="a-nav" to="/Nosotros"> Nosotros</Link>
