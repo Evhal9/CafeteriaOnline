@@ -189,3 +189,49 @@
 .carta-main {
     scroll-behavior: smooth;
 }
+
+
+
+/*
+**
+*
+*
+*
+*/
+.producto-opciones-info {
+    color: #888;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.producto-precio-range {
+    font-size: 1.1rem;
+    color: #8B4513;
+    font-weight: bold;
+}
+
+.ver-opciones-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.ver-opciones-btn:hover {
+    background: #218838;
+}
+
+
+.carrito-counter {
+    background: #8B4513;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-top: 10px;
+    display: inline-block;
+    font-weight: bold;
+}

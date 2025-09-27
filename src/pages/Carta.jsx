@@ -1,67 +1,113 @@
+import { useState } from 'react';
 import './Carta.css';
+import { productos, agruparPorCategoria, formatearCategoria } from '../data/productos';
+import SelectorOpciones from '../components/SelectorOpciones';
+import MiniCarrito from '../components/MiniCarrito';
+import { useCarrito } from '../context/CarritoContext'; 
+
 
 function Carta() {
-    const productos = [
-        { id: 1, nombre: "Café Espresso", precio: 2500, categoria: "bebidas-calientes",descripcion: "Café negro intenso y aromático",imagen: "../../public/productos/cafe-espresso.jpg"  },
-        { id: 2, nombre: "Capuccino", precio: 3000, categoria: "bebidas-calientes" ,descripcion: "Café con sabor chocolate",imagen: "../public/productos/capuccino.jpg" },
-        { id: 3, nombre: "Medialuna", precio: 3500, categoria: "comidas",descripcion: "Medialuna de manteca o de grasa",imagen: "/public/productos/medialuna.jpg" },
-        { id: 4, nombre: "Tostado apto vegano", precio: 3500, categoria: "comidas",descripcion: "Tostado de miga de J&Q apto vegano",imagen: "/productos/tostado.jpg" }
-    ];
+    const [productoSeleccionado, setProductoSeleccionado] = useState(null);
+    const [mostrarModal, setMostrarModal] = useState(false);
+    
 
-    const productosPorCategoria = productos.reduce((acc, producto) => {
-        if (!acc[producto.categoria]) {
-            acc[producto.categoria] =[];
-        }
-        acc[producto.categoria].push(producto);
-        return acc;
-    },{})
+    const { carrito, agregarAlCarrito, eliminarDelCarrito, vaciarCarrito, totalCarrito } = useCarrito();
 
-    const formatearCategoria = (categoria) => {
-        const nombres = {
-            'bebida-calientes': 'Bebidas Calientes',
-            'comidas': 'Comidas'
-        };
-        return nombres[categoria] || categoria;
+    const productosPorCategoria = agruparPorCategoria(productos);
+
+    const abrirOpciones = (producto) => {
+        setProductoSeleccionado(producto);
+        setMostrarModal(true);
+    };
+
+    const cerrarOpciones = () => {
+        setMostrarModal(false);
+        setProductoSeleccionado(null);
+    };
+
+    const handleAgregarAlCarrito = (producto, opcion, cantidad) => {
+        agregarAlCarrito(producto, opcion, cantidad); 
+        cerrarOpciones();
     };
 
     return (
         <div className="carta-container">
-                <header className="carta-header">
-                    <h1>Nuestra Carta</h1>
-                    <p>Descubre nuestros deliciosos productos</p>
-                </header>
+            <MiniCarrito 
+                carrito={carrito}
+                total={totalCarrito}
+                onEliminarItem={eliminarDelCarrito}
+                onVaciarCarrito={vaciarCarrito}
+            />
 
-                <main className="carta-main">
-                    {Object.entries(productosPorCategoria).map(([categoria, productosCategoria]) => (
-                        <section key={categoria} className="categoria-section">
-                            <h2 className="categoria-titulo">
-                               {formatearCategoria(categoria)}
-                            </h2>
-
-                <div className="productos-grid">
-                    {productosCategoria.map(producto => (
-                            <div key={producto.id} className="producto-card">
-                            <div className="producto-imagen">
-                                
-                                <img src={producto.imagen} alt={producto.imagen} className="producto-img" />
-                                
-                            </div>
-                            <div className="producto-infoo">
-                                <h3 className="producto-nombre">{producto.nombre}</h3>
-                                <p className="producto-descripcion">{producto.descripcion}</p>
-                                <div className="producto-precio-container">
-                                    <span className="producto-precio">${producto.precio}</span>
-                                    <button className="Agregar-al-carrito">Agregar +</button>
-                                </div>
-                            </div>    
-                        </div>    
-                        ))}
+            <header className="carta-header">
+                <h1>Nuestra Carta</h1>
+                <p>Personaliza tu pedido seleccionando opciones y cantidades</p>
+                {carrito.length > 0 && (
+                    <div className="carrito-counter">
+                        🛒 {carrito.reduce((sum, item) => sum + item.cantidad, 0)} items - Total: ${totalCarrito.toFixed(2)}
                     </div>
-                        </section>
-                    ))}
-                </main>
+                )}
+            </header>
+
+            <main className="carta-main">
+                {Object.entries(productosPorCategoria).map(([categoria, productosCategoria]) => (
+                    <section key={categoria} className="categoria-section">
+                        <h2 className="categoria-titulo">
+                            {formatearCategoria(categoria)}
+                        </h2>
+                        <div className="productos-grid">
+                            {productosCategoria.map(producto => (
+                                <div key={producto.id} className="producto-card">
+                                    <div className="producto-imagen">
+                                        {producto.imagen ? (
+                                            <img 
+                                                src={producto.imagen} 
+                                                alt={producto.nombre}
+                                                className="producto-img"
+                                                onError={(e) => {
+                                                    e.target.style.display = 'none';
+                                                    const placeholder = e.target.nextSibling;
+                                                    if (placeholder) placeholder.style.display = 'flex';
+                                                }}
+                                            />
+                                        ) : null}
+                                        <div className="imagen-placeholder" style={{display: producto.imagen ? 'none' : 'flex'}}>
+                                            {producto.nombre.charAt(0)}
+                                        </div>
+                                    </div>
+                                    <div className="producto-info">
+                                        <h3 className="producto-nombre">{producto.nombre}</h3>
+                                        <p className="producto-opciones-info">
+                                            {producto.opciones.length} opciones disponibles
+                                        </p>
+                                        <div className="producto-precio-container">
+                                            <span className="producto-precio-range">
+                                                Desde ${Math.min(...producto.opciones.map(op => op.precio)).toFixed(2)}
+                                            </span>
+                                            <button 
+                                                className="ver-opciones-btn"
+                                                onClick={() => abrirOpciones(producto)}
+                                            >
+                                                Ver Opciones
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                ))}
+            </main>
+
+            {mostrarModal && productoSeleccionado && (
+                <SelectorOpciones 
+                    producto={productoSeleccionado}
+                    onAgregarAlCarrito={handleAgregarAlCarrito} 
+                    onCerrar={cerrarOpciones}
+                />
+            )}
         </div>
     );
 }
 
-export default Carta
+export default Carta;

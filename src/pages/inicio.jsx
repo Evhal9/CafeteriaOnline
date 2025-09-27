@@ -1,5 +1,4 @@
 import './Inicio.css'
-//import Header from '../components/Header';
 
 function Inicio() {
     return (
