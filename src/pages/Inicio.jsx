@@ -1,10 +1,8 @@
 import './Inicio.css'
-import Header from '../components/Header';
 
 function Inicio() {
     return (
         <>
-        <Header></Header>
         <section id="banner-container">
             <div id="ban-barista">
                 <img  id="barista"src="./barista.png" alt="" />
@@ -24,9 +22,7 @@ function Inicio() {
                 </div>
             </div>
         </section>
-        <section>
-            <button type="button"> Ver carta </button>
-        </section>
+
         </>
     )
 }
