@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import './MiniCarrito.css';
-
 function MiniCarrito({ carrito, total, onEliminarItem, onVaciarCarrito }) {
     const navigate = useNavigate();
 
