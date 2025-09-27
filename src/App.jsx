@@ -1,18 +1,22 @@
 
 import './App.css'
 import { BrowserRouter } from "react-router-dom"
-import AppRoutes from "./components/AppRoutes.jsx"
-import Header from "./components/Header.jsx"
+import AppRoutes from "./components/AppRoutes/AppRoutes.jsx"
+import Header from "./components/Header/Header.jsx"
 import { CarritoProvider } from './context/CarritoContext' 
+import Footer from './components/Footer/Footer.jsx'
 
 function App() {
   return (
     <CarritoProvider> 
       <BrowserRouter>
-        <Header />
-        <main>
-          <AppRoutes />
-        </main>
+        <div className="app-container">
+          <Header />
+          <main>
+            <AppRoutes />
+          </main>
+          <Footer />
+        </div>
       </BrowserRouter>
     </CarritoProvider>
   )

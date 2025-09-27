@@ -1,4 +1,4 @@
-import carrito from '../assets/carrito.svg'
+import carrito from '../../assets/carrito.svg'
 import './Header.css'
 import {Link} from "react-router-dom"
 

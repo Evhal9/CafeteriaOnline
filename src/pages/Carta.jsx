@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './Carta.css';
 import { productos, agruparPorCategoria, formatearCategoria } from '../data/productos';
-import SelectorOpciones from '../components/SelectorOpciones';
-import MiniCarrito from '../components/MiniCarrito';
+import SelectorOpciones from '../components/SelectorOpciones/SelectorOpciones.jsx';
+import MiniCarrito from '../components/MiniCarrito/MiniCarrito.jsx';
 import { useCarrito } from '../context/CarritoContext'; 
 
 
