@@ -19,7 +19,8 @@ function Header(){
                     <Link className="a-nav" to="/Contacto">Contacto</Link>
                     <Link className="a-nav" to="/Nosotros"> Nosotros</Link>
                     <Link className="a-nav" to="/Carrito"> <img id="carrito" src={carrito} alt="" /></Link>
-                </section>
+                </section> 
+
         </nav>
         </>
     )
