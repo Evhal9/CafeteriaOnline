@@ -74,9 +74,11 @@ function Contacto() {
                             <p><strong>🚗 Estacionamiento:</strong> Gratuito para clientes</p>
                         </div>
                         <div className="mapa-placeholder">
-                            <p>📍 Ubicación: Av. Corrientes 123</p>
-                            <p>Entre calles Aroma y Sabores</p>
+                            <p>📍 Ubicación: Av. Corrientes 123, Bs.As. Entre las calles Aroma y Sabores.</p>
                         </div>
+                        <div className="contacto-image">
+                        <img src="/contacto/UbicacionCafeteria.jpg" alt="Ubicación de la cafetería" />
+                         </div>
                     </div>
                 </section>
             </main>
