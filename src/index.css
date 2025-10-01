@@ -7,5 +7,5 @@
 }
 body{
     background-color: var(--color-fondo);
-    font-family: Garamond;
+    font-family: var(--fuente-texto);
 }

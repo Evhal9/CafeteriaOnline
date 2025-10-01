@@ -1,4 +1,4 @@
-import carrito from '../assets/carrito.svg'
+import carrito from '../../assets/carrito.svg'
 import './Header.css'
 import {Link} from "react-router-dom"
 
@@ -18,7 +18,7 @@ function Header(){
                     <Link class="a-nav" to="/Carta">Carta</Link>
                     <Link class="a-nav" to="/Contacto">Contacto</Link>
                     <Link class="a-nav" to="/Nosotros"> Nosotros</Link>
-                    <Link class="a-nav" to="/Carrito"> <img id="carrito" src={carrito} alt="" /></Link>
+                    <Link class="a-nav" to="/Carrito"> <img id="carrito" src={carrito} alt="" /> </Link>
                 </section>
         </nav>
         </>

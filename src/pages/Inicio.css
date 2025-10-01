@@ -3,6 +3,9 @@
     --color-banner-light: #fae7d3ee;
     --color-banner-dark: #5a4b3aee;
     --color-banner-middle:#a18d75ee;
+    --color-banner-text:#272625ee;
+    --color-letters: #3f311c;
+
 } 
 
 
@@ -13,6 +16,7 @@
 }
 
 #banner-container{
+    animation: fadeIn 3s ease-in forwards;
     background-color: var(--color-background-banner);
     padding: 3vw;
     width: 95%;
@@ -25,10 +29,12 @@
     width: 65%;
 }
 #barista {
-   width:30vw;
+   width: 100%;
+   height: 99%;
 }
 
 #banner-items {
+    
     flex-direction: column;
 }
 
@@ -43,18 +49,21 @@
 .banner-child:nth-child(1){
     background-color: var(--color-banner-light);
     text-align: start;
+    animation: fadeIn 4s ease-in forwards;
 
 }
 
 .banner-child:nth-child(2){
     background-color: var(--color-banner-middle);
     text-align: center;
+    animation: fadeIn 5s ease-in forwards;
 
 }
 
 .banner-child:nth-child(3){
     background-color: var(--color-banner-dark);
     text-align: end;
+    animation: fadeIn 6s ease-in forwards;
 
 
 }
@@ -69,18 +78,121 @@
     font-size: 1.5vw;
     font-family: var(--fuente-texto);
     font-weight: 100;
+    color: var(--color-banner-text);
 }
 
-.item-title:nth-child(1) {
-
+.banner-child:nth-child(1) h3 {
+    color: var(--color-banner-middle);
 }
 
-.item-title:nth-child(2) {}
+.banner-child:nth-child(2) h3 {
+    color: var(--color-banner-dark);
+}
 
-.item-title:nth-child(3) {}
+.banner-child:nth-child(3) h3 {
+    color: var(--color-banner-light);
+}
 
-.item-info:nth-child(1) {}
+@keyframes fadeIn {
+  from { opacity: 0;
+        transform: translateX(-100px); }
+  to   { opacity: 1;
+        transform: translateX(0px);  }
+}
 
-.item-info:nth-child(2) {}
+#banner-mobile, #cafe-banner {
+    display: none;
+}
 
-.item-info:nth-child(3) {}
+#marca-des{
+    font-family: "Miss Fajardose", cursive;
+    font-weight: 100;
+    font-size: 5vw;
+}
+
+#description {
+    flex-direction: column;
+    font-size: 1.5vw;
+    flex-wrap: wrap;
+    color: var(--color-letters);
+    background: #f0e7ddc7;
+}
+
+#description > h3{
+    color: var(--color-banner-light);
+    font-weight: 100;
+}
+
+#sec-buttom, #description{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#sec-buttom {
+    width: 100%;
+    height: 10vh;
+    background-color:  #f0e7ddc7;
+    padding-bottom: 20px;
+}
+
+#sec-buttom > a> button{
+    background-color: var(--color-banner-middle);
+    width: 25vw;
+    height: 10vh;
+    padding: 0px;
+    border-width: 0px;
+    font-size: 3vw;
+    border-radius: 25%;
+    color: var(--color-banner-dark);
+}
+
+#sec-buttom > a> button:hover{
+    transform:scale(1.05) ;
+    background-color: var(--color-banner-text);
+    color: var(--color-banner-light);
+    box-shadow: 10px 13px 14px rgba(58, 56, 56, 0.356);
+}
+
+@media (max-width: 768px) {
+    #marca-des {
+        font-size: 7vw;
+    }
+    #description {
+        font-size: 2vh;
+    }
+    #banner-container{
+        display: flex;
+        flex-direction: column;
+    }
+    #ban-barista{
+        display: none;
+    }
+    #banner-mobile, #cafe-banner {
+        display: flex;
+        width: 100%;
+    }
+    #banner-items{
+        width: 94%;
+    }
+    
+    .banner-child:nth-child(1){
+        animation: fadeIn 4s ease-in forwards;
+    
+    }
+    .banner-child:nth-child(2){
+        animation: fadeIn 5s ease-in forwards;
+        
+    }
+    .banner-child:nth-child(3){
+        animation: fadeIn 6s ease-in forwards;
+    }
+    .item-info{
+        font-size: 3vw;
+    }
+    .item-title{
+        font-size: 5vw;
+    }
+
+}
