@@ -10,7 +10,7 @@ function AppRoutes (){
     return(
       <>
     <Routes>
-      <Route path="/Inicio" element={<Inicio/>} />
+      <Route path="/" element={<Inicio/>} />
       <Route path="/contacto" element={<Contacto />} />
       <Route path="/carta" element={<Carta />} />
       <Route path="/nosotros" element={<Nosotros />} />

@@ -1,24 +1,19 @@
 
 import './App.css'
-import { BrowserRouter } from "react-router-dom"
-import AppRoutes from "./components/AppRoutes/AppRoutes.jsx"
-import Header from "./components/Header/Header.jsx"
-import { CarritoProvider } from './context/CarritoContext' 
-import Footer from './components/Footer/Footer.jsx'
+import  Inicio  from './pages/Inicio.jsx'
+import Header  from './components/Header/Header.jsx'
+import { BrowserRouter } from "react-router-dom";
+//import AppRoutes from "./components/AppRoutes/AppRoutes.jsx"
 
 function App() {
   return (
-    <CarritoProvider> 
-      <BrowserRouter>
-        <div className="app-container">
-          <Header />
-          <main>
-            <AppRoutes />
-          </main>
-          <Footer />
-        </div>
-      </BrowserRouter>
-    </CarritoProvider>
+    <>
+    <BrowserRouter>
+      <Header></Header>
+      <Inicio></Inicio>
+      {/*<AppRoutes></AppRoutes> */}
+    </BrowserRouter>
+    </>
   )
 }
 

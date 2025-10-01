@@ -77,15 +77,15 @@
 }
 
 #marca {
-  font-family: "Miss Fajardose", cursive;
-  font-weight: 100;
-  font-style: normal;
-  position: absolute; 
-  top: 25%;          
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 4vw;     
-  pointer-events: none; 
+    font-family: "Miss Fajardose", cursive;
+    font-weight: 100;
+    font-style: normal;
+    position: absolute; 
+    top: 25%;          
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4vw;     
+    pointer-events: none; 
 }
 
 #first-child{
