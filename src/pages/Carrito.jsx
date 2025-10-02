@@ -11,7 +11,7 @@ function Carrito() {
         navigate('/carta');
     };
     const volverAlInicio = () => {
-        navigate('/Inicio');
+        navigate('/');
     };
 
     const handleConfirmarPedido = () => {
@@ -22,7 +22,7 @@ function Carrito() {
         
         alert(`¡Pedido confirmado! Total: $${totalCarrito.toFixed(2)}\nGracias por tu compra.`);
         vaciarCarrito();
-        navigate('/Inicio');
+        navigate('/');
     };
 
     const handleEliminarItem = (itemId) => {
