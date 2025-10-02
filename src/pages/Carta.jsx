@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Carta.css';
 import { productos, agruparPorCategoria, formatearCategoria } from '../data/productos';
 import SelectorOpciones from '../components/SelectorOpciones';
-import MiniCarrito from '../components/MiniCarrito';
+import MiniCarrito from '../components/MiniCarrito/MiniCarrito';
 import { useCarrito } from '../context/CarritoContext'; 
 
 
