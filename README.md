@@ -19,6 +19,7 @@ Se eligieron los siguientes colores para realizar el proyecto, buscando transmit
 
 ## Estructura del Proyecto
 
+<<<<<<< HEAD
 La estructura de carpetas principal se organiza de la siguiente manera:
 
 - **/public**: Contiene los assets estáticos como imágenes (`.jpg`, `.svg`) y fuentes. Las imágenes específicas de algunas páginas (como "Nosotros") se organizan en subcarpetas.
@@ -37,3 +38,45 @@ La estructura de carpetas principal se organiza de la siguiente manera:
 
 - **App.jsx**: Es el componente raíz que ensambla la estructura principal de la aplicación (Header, Rutas, Footer).
 - **main.jsx**: Es el punto de entrada de la aplicación. Renderiza el componente `App` en el DOM.
+=======
+src/assets -> imagenes que deben ser procesadas 
+
+src/componentes -> ~AppRoutes.jsx: Contiene las rutas para navegar por el proyecto.
+                -> ~Header.jsx: Contiene la estrucutura del navegador.
+                -> ~Header.css: Contiene los estilos para la estructura del header.
+                -> ~SelectorOpciones.jsx: Modal para seleccionar opciones y cantidades de productos.
+                -> ~SelectorOpciones.css: Estilos del modal de opciones.
+                -> ~MiniCarrito.jsx: Carrito flotante que muestra items agregados
+                -> ~MiniCarrito.css: Estilos del mini-carrito
+
+src/pages:  -> ~Inicio.jsx: Página principal con banner promocional
+            -> ~Inicio.css: Estilos de la página de inicio
+            -> ~Carta.jsx: Página principal con lista de productos y sistema de pedidos
+            -> ~Carta.css: Estilos de la página de carta
+            -> ~Carrito.jsx: Página completa del carrito de compras
+            -> ~Carrito.css: Estilos de la página de carrito
+            -> ~Contacto.jsx: Página de contacto (en desarrollo)
+            -> ~Nosotros.jsx: Página "Sobre nosotros" (en desarrollo)
+
+src/context:    -> ~CarritoContext.jsx: Context API para manejo global del estado del carrito.
+
+src/data:   -> ~productos.js: Base de datos de productos con opciones y precios
+
+src/hooks:  -> ~useCarrito.js: Hook personalizado para acceder al contexto del carrito
+
+App.css -> Estilos del componente App
+
+App.jsx -> Componente principal de la aplicación
+
+index.css -> Contiene los estilos globales para todo el proyecto
+
+main.jsx -> Punto de entrada de la aplicación
+
+### Funcionalidades Implementadas
+
+- **Carta interactiva** con productos por categorías
+- **Sistema de opciones** (tamaños, variantes) por producto
+- **Carrito en tiempo real** con mini-carrito flotante
+- **Gestión de pedidos** (agregar, eliminar, modificar cantidades)
+- **Navegación SPA** con React Router
+>>>>>>> santi
