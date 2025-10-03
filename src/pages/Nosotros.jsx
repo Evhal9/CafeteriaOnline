@@ -2,7 +2,7 @@ import './Nosotros.css';
 
 function Nosotros() {
     return (
-        <div className="nosotros-container">
+        <div className="nosotros-container page-transition">
             <header className="nosotros-header">
                 <h1>Sobre Nosotros</h1>
                 <p>Una historia de pasión por el café y la comunidad.</p>

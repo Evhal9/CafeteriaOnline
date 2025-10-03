@@ -31,7 +31,7 @@ function Carta() {
     };
 
     return (
-        <div className="carta-container">
+        <div className="carta-container page-transition">
             <MiniCarrito 
                 carrito={carrito}
                 total={totalCarrito}

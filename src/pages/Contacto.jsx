@@ -2,7 +2,7 @@ import './Contacto.css';
 
 function Contacto() {
     return (
-        <div className="contacto-container">
+        <div className="contacto-container page-transition">
             <header className="contacto-header">
                 <h1>Contacto</h1>
                 <p>Estamos aquí para atenderte. ¡Visítanos o escríbenos!</p>

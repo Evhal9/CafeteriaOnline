@@ -36,7 +36,7 @@ function Carrito() {
     };
 
     return (
-        <div className="carrito-page">
+        <div className="carrito-page page-transition">
             <header className="carrito-header">
                 <button onClick={volverAlInicio} className="volver-btn">
                     ← Volver al Inicio

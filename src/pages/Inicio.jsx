@@ -3,7 +3,8 @@ import {Link} from "react-router-dom"
 
 function Inicio() {
     return (
-        <>
+        
+        <div className="page-transition">
         <section id="banner-container">
             <div id="banner-mobile">
                 <img id="cafe-banner" src="./src/assets/banner.png" alt="Instrumentos de cafe" />
@@ -35,8 +36,8 @@ function Inicio() {
         <section id="sec-buttom">
             <Link to="/Carta"><button> Ver carta </button> </Link>
         </section>
-
-        </>
+        </div>
+        
     )
 }
 export default Inicio

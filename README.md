@@ -64,7 +64,7 @@ src/data:   -> ~productos.js: Base de datos de productos con opciones y precios
 
 src/hooks:  -> ~useCarrito.js: Hook personalizado para acceder al contexto del carrito
 
-App.css -> Estilos del componente App
+App.css -> Estilos del componente App - transiciones entre paginas
 
 App.jsx -> Componente principal de la aplicación
 
