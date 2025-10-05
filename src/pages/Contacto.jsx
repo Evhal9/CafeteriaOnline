@@ -1,6 +1,46 @@
 import './Contacto.css';
 
+import { useState } from 'react';
+
 function Contacto() {
+    const [formData, setFormData] = useState({
+        nombre: '',
+        email: '',
+        telefono: '',
+        fecha: '',
+        hora: '',
+        personas: '',
+        mensaje: ''
+    });
+
+    const [enviado, setEnviado] = useState(false);
+
+    const manejarCambio = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const manejarEnvio = (e) => {
+        e.preventDefault();
+        console.log('Datos del formulario:', formData);
+        setEnviado(true);
+        setTimeout(() => setEnviado(false), 5000);
+        
+        // Limpiar formulario
+        setFormData({
+            nombre: '',
+            email: '',
+            telefono: '',
+            fecha: '',
+            hora: '',
+            personas: '',
+            mensaje: ''
+        });
+    };
+
+
     return (
         <div className="contacto-container">
             <header className="contacto-header">
@@ -64,6 +104,109 @@ function Contacto() {
                         </div>
                     </div>
                 </section>
+
+                {enviado && (
+                            <div className="mensaje-exito">
+                                ✅ ¡Gracias por tu mensaje! Te contactaremos pronto.
+                            </div>
+                        )}
+
+                <form className="formulario-contacto" onSubmit={manejarEnvio}>
+                    <div className="form-fila">
+                    <div className="form-grupo">
+                    <label htmlFor="nombre">Nombre completo *</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        value={formData.nombre}
+                        onChange={manejarCambio}
+                        required
+                    />
+                    </div>
+                        <div className="form-grupo">
+                            <label htmlFor="email">Email *</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={manejarCambio}
+                                     required
+                                    />
+                                </div>
+                            </div>
+
+                    <div className="form-fila">
+                        <div className="form-grupo">
+                            <label htmlFor="telefono">Teléfono</label>
+                                <input
+                                    type="tel"
+                                    id="telefono"
+                                    name="telefono"
+                                    value={formData.telefono}
+                                    onChange={manejarCambio}
+                                    />
+                                </div>
+                    <div className="form-grupo">
+                        <label htmlFor="personas">Número de personas</label>
+                            <select
+                                id="personas"
+                                name="personas"
+                                value={formData.personas}
+                                onChange={manejarCambio}
+                                >
+                                <option value="">Seleccionar</option>
+                                <option value="1">1 persona</option>
+                                <option value="2">2 personas</option>
+                                <option value="3-4">3-4 personas</option>
+                                <option value="5-6">5-6 personas</option>
+                                <option value="7+">7+ personas</option>
+                                </select>
+                                </div>
+                            </div>
+
+                    <div className="form-fila">
+                        <div className="form-grupo">
+                            <label htmlFor="fecha">Fecha preferida</label>
+                                <input
+                                    type="date"
+                                    id="fecha"
+                                    name="fecha"
+                                    value={formData.fecha}
+                                    onChange={manejarCambio}
+                                    />
+                                </div>
+                    <div className="form-grupo">
+                        <label htmlFor="hora">Hora preferida</label>
+                            <input
+                                type="time"
+                                id="hora"
+                                name="hora"
+                                value={formData.hora}
+                                onChange={manejarCambio}
+                                />
+                                </div>
+                            </div>
+
+                    <div className="form-grupo">
+                        <label htmlFor="mensaje">Mensaje *</label>
+                        <textarea
+                            id="mensaje"
+                            name="mensaje"
+                            value={formData.mensaje}
+                            onChange={manejarCambio}
+                            rows="5"
+                            placeholder="Cuéntanos cómo podemos ayudarte..."
+                            required
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" className="btn-enviar">
+                            Enviar Mensaje
+                            </button>
+                        </form>
+                    
 
                 <section className="mapa-section">
                     <h2>¿Cómo llegar?</h2>
